@@ -6,6 +6,7 @@ interface Props {
   color?: string;
   textColor?: string;
   widthBtn?: boolean;
+  action: (numberText: string) => void;
 }
 
 export const Btn = ({
@@ -13,9 +14,10 @@ export const Btn = ({
   color = '#2D2D2D',
   textColor = 'white',
   widthBtn = false,
+  action,
 }: Props) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => action(text)}>
       <View
         // eslint-disable-next-line react-native/no-inline-styles
         style={{
